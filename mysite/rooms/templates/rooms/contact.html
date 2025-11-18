@@ -1,0 +1,62 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - NeverForget</title>
+  <link rel="stylesheet" href="{%static 'rooms/contactstyle.css'%}" />
+</head>
+<body>
+  <header>
+
+      <div class="logo">NeverForget Apartment</div>
+      <nav>
+        <ul class="sidebar">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'vacancy' %}">vacancy</a></li>
+          <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+        </ul>
+        <div class="nav-local">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'vacancy' %}">vacancy</a></li>
+      </div>
+      <ul>
+        <li class="menu"  onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e3e3e3" id="menu"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+      </ul>
+      
+    </nav>
+  </header>
+  <div class="message-section">
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</div>
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form" method="post">
+      {% csrf_token %}
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NeverForget Apartment. All rights reserved.</p>
+  </footer>
+<script src="{% static 'rooms/script.js'%}"></script>
+</body>
+</html>

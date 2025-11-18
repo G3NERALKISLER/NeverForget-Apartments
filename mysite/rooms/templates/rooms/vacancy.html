@@ -1,0 +1,74 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeverForget Vacancy</title>
+    <link rel="stylesheet" href="{%static 'rooms/vacancystyle.css'%}">
+</head>
+<body>
+  <header>
+    <div class="logo">NeverForget Apartments</div>
+    <nav>
+      <ul class="sidebar">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'contact' %}">contact us</a></li>
+        <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+      
+      </ul>
+      <div class="nav-local">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'contact' %}">contact us</a></li>
+      </div>
+      <ul>
+        <li class="menu"  onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e3e3e3" id="menu"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+      </ul>
+    </nav>
+    </header>
+    
+    <section class="listings">
+      <h2>Available Apartments</h2>
+      <div class="apartment-grid">
+          
+          <!-- Bedsitter card -->
+          <div class="apartment-card">
+              <h3>Bedsitter</h3>
+              <img src="{% static 'rooms/images/bedsitter.jpg' %}" alt="Bedsitter">
+              <p>11,000ksh/month - Your space, 1 Bathroom and toilet</p>
+  
+              {% for category in categories %}
+                  {% if category.name == "Bedsitter" %}
+                      <p id="Available">Available bedsitter for now: {{ category.available_count }}</p>
+                  {% endif %}
+              {% endfor %}
+          </div>
+  
+          <!-- One Bedroom card -->
+          <div class="apartment-card">
+              <h3>One Bedroom</h3>
+              <img src="{% static 'rooms/images/onebedroom.jpeg' %}" alt="One Bedroom" height="300px" width="200px">
+              <p>16,000ksh/month - Spacious living, 1 Bathroom</p>
+  
+              {% for category in categories %}
+                  {% if category.name == "One Bedroom" %}
+                      <p id="Available">Available One bedroom for now: {{ category.available_count }}</p>
+                  {% endif %}
+              {% endfor %}
+          </div>
+           <div class="apartment-card">
+            <h3>Salon</h3>
+            <img src="{% static 'rooms/images/salon.jpeg' %}" alt="Salon" height="300px">
+           </div>
+          
+        </div>
+      </section>
+    
+    <footer>
+      <h3>Contact Us</h3>
+      <p><p>&copy; 2025 NeverForget Apartment. All rights reserved.</p></p>
+    </footer>
+    <script src="{% static 'rooms/script.js'%}"></script>
+</body>
+</html>
