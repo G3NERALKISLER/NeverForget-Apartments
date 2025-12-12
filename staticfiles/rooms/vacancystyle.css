@@ -109,7 +109,7 @@ nav li:hover::after{
 .menu::after{
   background: none;
 }
-  .listings {
+.listings {
     padding: 2rem;
     text-align: center;
     background-color: white;
@@ -127,16 +127,16 @@ nav li:hover::after{
   }
   
   .apartment-card {
-    background: #fff;
+    
     border: 2px solid #ddd;
     padding: 1rem;
     border-radius: 5px;
-    height: fit-content;
+    height: 70px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   .apartment-card img {
-    width: 65%;
+    width: 100%;
     border-radius: 4px;
   }
   

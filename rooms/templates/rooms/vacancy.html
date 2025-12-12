@@ -35,7 +35,7 @@
           <!-- Bedsitter card -->
           <div class="apartment-card">
               <h3>Bedsitter</h3>
-              <img src="{% static 'rooms/images/bedsitter.jpg' %}" alt="Bedsitter">
+              <img src="{% static 'rooms/images/bedsitter.jpg' %}" alt="Bedsitter" height="300px" width="200px">
               <p>11,000ksh/month - Your space, 1 Bathroom and toilet</p>
   
               {% for category in categories %}
@@ -57,11 +57,6 @@
                   {% endif %}
               {% endfor %}
           </div>
-           <div class="apartment-card">
-            <h3>Salon</h3>
-            <img src="{% static 'rooms/images/salon.jpeg' %}" alt="Salon" height="300px">
-           </div>
-          
         </div>
       </section>
     
