@@ -107,7 +107,6 @@ nav li:hover::after{
   border-right: none;
   border-bottom: none;
 }
-#menu{margin-left: 198px;}
 .menu::after{
   background: none;
 }
