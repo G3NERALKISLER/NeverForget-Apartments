@@ -181,4 +181,5 @@ li:hover::after{
     .nav-local{
       display: none;
     }
+    .logo{font-size:22px;}
   }

@@ -47,7 +47,7 @@ color:#e67e22;
   justify-content: flex-start;
 }
 .sidebar a{
-  color: black;
+  color: white;
 }
 .sidebar li{
  
@@ -186,6 +186,8 @@ a:hover::after{
       /* Values Section */
 .values {
         padding: 4rem 2rem;
+        margin:10px;
+        border-radius: 10px;
         background: linear-gradient(to right, #ff914d, #8b5e3c);
         color: white;
         text-align: center;
@@ -264,7 +266,7 @@ footer {
         .values-grid {
           grid-template-columns: repeat(3, 1fr);
         }
-        #menu{
+        .menu{
           display: none;
         }
 
@@ -273,5 +275,6 @@ footer {
           .nav-local{
               display:none;
             }
-          
+          header h1{font-size: 18px;}
+          .hero-content h1 {font-size:22px;} 
       }
